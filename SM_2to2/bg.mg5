@@ -1,0 +1,17 @@
+launch -n pt4_0.05_pta_0.05 /Users/isaac/Work/MuonE/SMmuegamma/ 
+set ebeam1 = 150.0 
+set ebeam2 = 5.11e-04 
+set ptj = 0.0 
+set ptl = 0.0 
+set etaj = -1.0 
+set etaa = -1.0 
+set etal = -1.0 
+set drjj = 0.0 
+set drll = 0.0 
+set draa = 0.0 
+set draj = 0.0 
+set drjl = 0.0 
+set dral = 0.0 
+set pt_min_pdg {11: 0.05} 
+set pta 0.05 
+done
