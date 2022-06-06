@@ -8,8 +8,8 @@ import os
 
 import numpy as np
 
-mg5_command_file_path = "/Users/isaac/Work/MUonE/2020-12-MUonE/vec_mass.mg5"
-output_path = "/Users/isaac/Work/MUonE/MG5_events/20211215"
+mg5_command_file_path = "vec_mass.mg5"
+output_path = "/Users/isaac/Work/MUonE-displaced-vertex/Signal"
 
 mass_spectrum = np.logspace(np.log10(0.002), np.log10(0.2), 30).tolist()
 mass_spectrum = [round(x, 4) for x in mass_spectrum]
@@ -29,9 +29,15 @@ def run_madgraph(X_mass):
     mg5_command = mg5_command + "done"
     mg5_command_file.write(mg5_command)
     mg5_command_file.close()
-    run_command = "~/Work/MG5_aMC_v3_1_0/bin/mg5_aMC " + mg5_command_file_path
+    run_command = "~/Work/MG5_aMC_v3_3_2/bin/mg5_aMC " + mg5_command_file_path
     os.system(run_command)
 
 
 for X_mass in mass_spectrum:
     run_madgraph(X_mass)
+
+for X_mass in mass_spectrum:
+    Event_path =  "/Users/isaac/Work/MUonE-displaced-vertex/Signal/Events"
+    lhe_gz_file = os.path.join(Event_path, "X_mass_"+str(X_mass), "unweighted_events.lhe.gz")
+    unzip_command = "gunzip " + lhe_gz_file
+    os.system(unzip_command)

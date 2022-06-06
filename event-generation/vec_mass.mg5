@@ -1,4 +1,4 @@
-launch -n X_mass_0.2 /Users/isaac/Work/MUonE/MG5_events/20211215 
+launch -n X_mass_0.2 /Users/isaac/Work/MUonE-displaced-vertex/Signal 
 set nevents = 100000 
 set ebeam1 = 160.0 
 set ebeam2 = 5.11e-04 
